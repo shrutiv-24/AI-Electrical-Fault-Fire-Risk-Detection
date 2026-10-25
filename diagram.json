@@ -1,0 +1,47 @@
+{
+  "version": 1,
+  "author": "Team VK26-IITI-AHM-0413",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": 0, "left": 0, "attrs": {} },
+    { "type": "wokwi-potentiometer", "id": "potI", "top": -130, "left": -160, "attrs": {} },
+    { "type": "wokwi-potentiometer", "id": "potV", "top": -130, "left": 0, "attrs": {} },
+    { "type": "wokwi-potentiometer", "id": "potT", "top": -126.1, "left": 163, "attrs": {} },
+    { "type": "wokwi-led", "id": "ledG", "top": -60, "left": -260, "attrs": { "color": "green" } },
+    {
+      "type": "wokwi-led",
+      "id": "ledY",
+      "top": -60,
+      "left": -220,
+      "attrs": { "color": "yellow" }
+    },
+    { "type": "wokwi-led", "id": "ledR", "top": -60, "left": -180, "attrs": { "color": "red" } },
+    { "type": "wokwi-buzzer", "id": "bz", "top": 240, "left": -120, "attrs": { "volume": "0.1" } },
+    { "type": "wokwi-relay-module", "id": "rl", "top": 240.2, "left": 86.4, "attrs": {} }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "potI:VCC", "esp:3V3", "red", [] ],
+    [ "potI:GND", "esp:GND.1", "black", [] ],
+    [ "potI:SIG", "esp:34", "orange", [] ],
+    [ "potV:VCC", "esp:3V3", "red", [] ],
+    [ "potV:GND", "esp:GND.1", "black", [] ],
+    [ "potV:SIG", "esp:35", "green", [] ],
+    [ "potT:VCC", "esp:3V3", "red", [] ],
+    [ "potT:GND", "esp:GND.1", "black", [] ],
+    [ "potT:SIG", "esp:32", "blue", [] ],
+    [ "ledG:A", "esp:25", "green", [] ],
+    [ "ledY:A", "esp:26", "yellow", [] ],
+    [ "ledR:A", "esp:27", "red", [] ],
+    [ "ledG:C", "esp:GND.1", "black", [] ],
+    [ "ledY:C", "esp:GND.1", "black", [] ],
+    [ "ledR:C", "esp:GND.1", "black", [] ],
+    [ "bz:1", "esp:GND.1", "black", [] ],
+    [ "bz:2", "esp:14", "red", [] ],
+    [ "rl:VCC", "esp:5V", "red", [] ],
+    [ "rl:GND", "esp:GND.2", "black", [] ],
+    [ "rl:IN", "esp:33", "blue", [] ]
+  ],
+  "dependencies": {}
+}
